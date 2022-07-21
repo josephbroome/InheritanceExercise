@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Inheritance
 {
@@ -6,21 +7,42 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
+            
+            
+           var bird1= new Bird()
+           {
+               Age=4,
+               IsAlive=true,
+               Limbs=2,
+               LandSeaAir="air",
+               CanFly=true,
+               WingColor="red",
+               DoMigrate=false,
+               BeakLength=3.4,
+           };
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
+            var alligator = new Reptile()
+            {
+                IsColdBlooded = true,
+                ShedsSkin = false,
+                CanRegrowTail = true,
+                NumberOfTeeth = 55,
+            };
 
+            var myAnimals= new List<Animal> {alligator,bird1};
 
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
-
-
+            foreach(var animal in myAnimals)
+            {
+                Console.WriteLine($"Alive:{animal.IsAlive}");
+                Console.WriteLine($"Age:{animal.Age}");
+                Console.WriteLine($"Number of limbs:{animal.Limbs}");
+                Console.WriteLine($"It lives in/on:{animal.LandSeaAir}");
+                Console.WriteLine();
+                Console.WriteLine("*****************************************");
+                Console.WriteLine();
+                
+            }
+            
 
 
             /*Create an object of your Bird class
